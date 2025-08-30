@@ -4,11 +4,11 @@
   margin: 50px auto;        
   padding: 20px;             
   border-radius: 15px;       
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0px 0px 25px blue;
+  
   text-align: center;  
-  color: white;
+  color:white;
 }
-
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -43,7 +43,7 @@
   color: blue;
 }
 
-/* Winner animation */
+
 .winner-cell {
   animation: winnerFlash 1s infinite alternate;
   font-size: 36px;
@@ -81,4 +81,89 @@ button {
 
 button:hover {
   background: #145dbf;
+}
+.name-input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.name-input input {
+  padding: 10px;
+  font-size: 16px;
+  background-color: linen;
+  border-radius: 6px;
+  border: none;
+  width: 200px;
+}
+
+.blink-bg {
+  animation: blinkBackground 1s infinite;
+}
+
+@keyframes blinkBackground {
+  0% { background-color: black; }
+  50% { background-color: #222; }
+  100% { background-color: black; }
+}
+
+.blink-bg {
+  animation: blinkBackground 1s infinite;
+}
+
+@keyframes blinkBackground {
+  0% { background-color: black; }
+  50% { background-color: #222; }
+  100% { background-color: black; }
+}
+
+
+.blink-text {
+  animation: blinkText 1s infinite;
+}
+
+@keyframes blinkText {
+  0% { color: white; }
+  50% { color: black; }
+  100% { color: white; }
+}
+
+.flower-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flower {
+  position: absolute;
+  top: -2rem;
+  font-size: 24px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+
+.blink {
+  animation: blinkText 1s infinite;
+}
+
+@keyframes blinkText {
+  50% { opacity: 0; }
+}
+.winner-display {
+  font-size: 3rem;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px black;
 }
